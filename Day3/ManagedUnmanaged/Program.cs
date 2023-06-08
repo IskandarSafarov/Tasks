@@ -1,4 +1,29 @@
-﻿
+﻿using UnmanagedCode;
+
+while (true)
+{
+    Console.WriteLine(@"r - to read
+                        w - to write");
+    string option = Console.ReadLine();
+    if (option == "r")
+    {
+        using (Application app = new Application("store.txt"))
+        {
+            Console.WriteLine(app.ReadFromFile());
+        }
+    }
+    else if (option == "w")
+    {
+        using (Application app = new Application("store.txt"))
+        {
+            Console.Write("Input something: ");
+            string txt = Console.ReadLine();
+            app.WriteToFile(txt);
+        }
+
+    }
+}
+/*
 using ManagedUnmanaged;
 
 while (true)
@@ -20,34 +45,4 @@ while (true)
         }
     }
 }
-
-
-
-/**
-using UnmanagedCode;
-
-while (true)
-{
-    Console.WriteLine(@"r - to read
-w - to write");
-    string option = Console.ReadLine();
-    if (option == "r")
-    {
-        using (Application app = new Application("store.txt"))
-        {
-            Console.WriteLine(app.ReadFromFile());
-        }
-    }
-    else if (option == "w")
-    {
-        using (Application app = new Application("store.txt"))
-        {
-            Console.Write("Input something: ");
-            string txt = Console.ReadLine();
-            app.WriteToFile(txt);
-        }
-
-    }
-}
-
-**/
+*/
