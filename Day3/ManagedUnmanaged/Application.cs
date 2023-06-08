@@ -22,7 +22,7 @@ public class Application : IDisposable
     {
         byte[] strToByte = Encoding.UTF8.GetBytes(data + "\n");
         fs.Write(strToByte, 0, strToByte.Length);
-
+        //fs.Close();
     }
 
     public string ReadFromFile()
@@ -36,6 +36,7 @@ public class Application : IDisposable
             res.Append(temp.GetString(b, 0, readLen));
         }
         return res.ToString();
+        //fs.Close();
     }
 }
 /*

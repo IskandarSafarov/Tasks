@@ -18,7 +18,7 @@ while (true)
         {
             Console.Write("Input something: ");
             string txt = Console.ReadLine();
-            app.WriteToFile(txt);
+            app.WriteToFile(txt+"\n");
         }
 
     }
