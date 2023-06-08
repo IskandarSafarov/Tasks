@@ -2,9 +2,9 @@
 {
     Product pr = new Product();
     Console.WriteLine(@"Выберите действие:
-    Показать список продуктов: a
-    Добавить новый продукт: b
-    Продать продукт: c");
+                        Показать список продуктов: a
+                        Добавить новый продукт: b
+                        Продать продукт: c");
     string userInput = Console.ReadLine();
 
     if (userInput == "a")
@@ -37,6 +37,6 @@
         Console.Write("Количество продукта: ");
         int productQuantity = int.Parse(Console.ReadLine());
 
-        pr.ChangeNumber(productName, -1 * productQuantity);
+        pr.ChangeNumber(productName, - productQuantity);
     }
 }

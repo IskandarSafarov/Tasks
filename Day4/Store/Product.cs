@@ -21,7 +21,7 @@ public class Product
         {
             newProds[i] = prods[i];
         }
-        newProds[newProds.Length - 1] = name + " " + count;
+        newProds[^1] = $"{name} {count}";
         File.WriteAllLines("store.txt", newProds);
     }
 
@@ -52,13 +52,13 @@ public class Product
                 var temp = int.Parse(prods[i].Split()[1]);
                 if (n + temp >= 0)
                 {
-                    prods[i] = name + " " + (temp + n);
+                    prods[i] = $"{name} {temp + n}";
                     File.WriteAllLines("store.txt", prods);
                     break;
                 }
                 else
                 {
-                    Console.WriteLine("Not enough products");
+                    Console.WriteLine("Недостаточно продуктов");
                 }
             }
         }
